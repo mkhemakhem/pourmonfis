@@ -2,7 +2,7 @@ import random
 # la grille principale
 # toutes les cases sont initialisées à 0
 g = [[0] * 7 for _ in range(6)]
-#gvide = [[0] * 7 for _ in range(6)]
+gvide = [[0] * 7 for _ in range(6)]
 #grille d'affichage: toutes les cases sont initialisées au caractere .
 grille_affiche = [["."] * 7 for _ in range(6)]
 joueur1="X"
