@@ -4,7 +4,7 @@ extension = ".data"
 
 def grilles_from_file(joueur):
     grilles = []
-    fichier = fichier_grille_gagnant+joueur+extension
+    fichier = fichier_grille_gagnant+str(joueur)+extension
     try:
         file = open(fichier, "r")
 #	lines = reversed(file.readlines())
@@ -26,7 +26,7 @@ def grilles_from_file(joueur):
                 liste = lines[int(nombre_grille*6)-1 -
                               (6*iteration)-ligne].split()
                 for colonne in range(7):
-                    grille_travaille[ligne][colonne] = liste[colonne]
+                    grille_travaille[ligne][colonne] = int(liste[colonne])
                     
             grilles.append(grille_travaille)
         # print("############# on a imprime la grille",iteration+1,"#####################")
@@ -38,8 +38,12 @@ def grilles_from_file(joueur):
 
 
 def stocke_grille_ganante(g_gagant,joueur):
-    fichier = fichier_grille_gagnant+joueur+extension
+    fichier = fichier_grille_gagnant+str(joueur)+extension
     file = open(fichier, "a")
     for ligne in range(6):
-        fichier.write(str(g_gagant[ligne]).replace(",", "").replace("[", "").replace("]","").replace("'",""));
-        fichier.write("\n")
+        maligne=str(g_gagant[ligne]).replace(",", "").replace("[", "").replace("]","").replace("'","")
+        #maligne="0 0 0 0 0 0 0"
+        file.write(maligne);
+        file.write("\n")
+
+ 
