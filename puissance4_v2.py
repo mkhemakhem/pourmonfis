@@ -50,23 +50,6 @@ def affiche():
             "[", "").replace("]", "").replace("'", ""))
 
 
-def stocke_grille_ganante(joueur):
-    fichier = open("gagant"+joueur, "a")
-
-    for ligne in range(6):
-        for colonne in range(7):
-            if g[ligne][colonne] == 1:
-                grille_affiche[ligne][colonne] = joueur1
-            elif g[ligne][colonne] == 2:
-                grille_affiche[ligne][colonne] = joueur2
-            else:
-                grille_affiche[ligne][colonne] = "."
-        fichier.write(str(grille_affiche[ligne]).replace(
-            ",", "").replace("[", "").replace("]", "").replace("'", ""))
-        fichier.write("\n")
-
-# on verifie si il y'a une case de valeur 0 sur la ligne 0
-
 
 def coup_possible(grille, c):
     retour = False

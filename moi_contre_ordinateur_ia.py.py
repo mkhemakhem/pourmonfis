@@ -26,7 +26,7 @@ def main():
                             if ia.isIncluded(puissance4_v2.g, grille) == True:
                                 colonne_ajouer = ia.getColonne(puissance4_v2.g,grille, 2)
                                 puissance4_v2.jouer(puissance4_v2.g, JoueurSuivant, colonne_ajouer)
-                                break
+#                                break
                         if colonne_ajouer == 7:
                             grilles = gr.grilles_from_file(1)
                             for grille in grilles:
@@ -34,7 +34,7 @@ def main():
                                     colonne_ajouer = ia.getColonne(puissance4_v2.g,grille, 1)
                                     puissance4_v2.jouer(
                                            puissance4_v2.g, JoueurSuivant, colonne_ajouer)
-                                    break
+#                                    break
                             if colonne_ajouer == 7:
                                 puissance4_v2.coup_aleatoire(
                                    puissance4_v2.g, JoueurSuivant)
@@ -61,7 +61,7 @@ def main():
         puissance4_v2.affiche()
         tag1 = puissance4_v2.victoire(puissance4_v2.g, JoueurSuivant)
         if tag1 == True:
-            puissance4_v2.stocke_grille_ganante(str(JoueurSuivant))
+            gr.stocke_grille_ganante(puissance4_v2.g,JoueurSuivant)
         tag2 = puissance4_v2.match_nul(puissance4_v2.g)
 
         if tag1 == True or tag2 == True:
