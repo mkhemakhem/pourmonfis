@@ -160,12 +160,12 @@ def diagp(grille, joueur, ligne, colonne, position):
     except:
         retour2 = bool(False)
     try:
-        if position == 2 and ligne < 4 and colonne < 5:
+        if position == 2 and ligne < 4 and ligne > 0 and colonne < 5 and colonne >0:
             retour1 = grille[ligne-1][colonne-1] == joueur and grille[ligne + 1][colonne+1] == joueur and grille[ligne+2][colonne+2] == joueur
     except:
         retour1 = bool(False)
     try:
-        if position == 2 and ligne < 4 and colonne < 6 and colonne > 1:
+        if position == 2 and ligne < 4 and colonne < 6 and colonne > 1 and ligne > 0:
             retour2 = grille[ligne-1][colonne+1] == joueur and grille[ligne +1][colonne-1] == joueur and grille[ligne+2][colonne-2] == joueur
     except:
         retour2 = bool(False)
@@ -337,3 +337,28 @@ def getColonneFromGrille(magrille, grille_contenante, joueur_de_comparaison):
 
     return retour
 
+g[5][0]=2
+g[5][1]=1
+g[5][2]=2
+g[5][3]=2
+g[5][4]=1
+g[5][5]=2
+g[5][6]=2
+g[4][0]=1
+g[4][1]=1
+g[4][2]=1
+g[4][3]=2
+g[4][4]=1
+g[4][5]=2
+g[3][0]=1
+g[3][1]=1
+g[3][2]=1
+g[2][0]=1
+g[2][1]=2
+g[2][2]=2
+g[1][2]=1
+g[1][1]=2
+g[1][0]=2
+g[0][2]=1
+toto=coup_aleatoire_gagant(2)
+print(toto)
