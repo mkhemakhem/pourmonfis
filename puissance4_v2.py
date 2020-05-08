@@ -337,28 +337,3 @@ def getColonneFromGrille(magrille, grille_contenante, joueur_de_comparaison):
 
     return retour
 
-g[5][0]=2
-g[5][1]=1
-g[5][2]=2
-g[5][3]=2
-g[5][4]=1
-g[5][5]=2
-g[5][6]=2
-g[4][0]=1
-g[4][1]=1
-g[4][2]=1
-g[4][3]=2
-g[4][4]=1
-g[4][5]=2
-g[3][0]=1
-g[3][1]=1
-g[3][2]=1
-g[2][0]=1
-g[2][1]=2
-g[2][2]=2
-g[1][2]=1
-g[1][1]=2
-g[1][0]=2
-g[0][2]=1
-toto=coup_aleatoire_gagant(2)
-print(toto)
