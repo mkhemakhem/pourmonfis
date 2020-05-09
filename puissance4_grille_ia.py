@@ -10,6 +10,7 @@ def isIncluded(g_jeu,g_ia):
 def getColonne(g_jeu,g_ia,joueur):
     for ligne in reversed(range(6)):
         for colonne in range(7):
-            if g_jeu[ligne][colonne]==0 and g_jeu[ligne][colonne]==joueur:
+            if g_jeu[ligne][colonne]==0 and g_ia[ligne][colonne]==joueur:
+                retour=int(colonne)
                 return colonne
                 break

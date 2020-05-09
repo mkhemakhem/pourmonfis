@@ -54,9 +54,18 @@ def main():
             print("entrer un choix de colonne")
             bonchoix = 7
             while bonchoix == 7:
-                colonne = int(input())
-                if puissance4_v2.jouer(puissance4_v2.g, 1, colonne):
-                    bonchoix = colonne
+                try:
+                    colonne = int(input())
+                    if colonne <0 or colonne>6:
+                        print("votre choix doit etre un entier entre 0 et 6")
+                        bonchoix=7
+                        
+                    else:
+                        if puissance4_v2.jouer(puissance4_v2.g, 1, colonne):
+                            bonchoix = colonne
+                except:
+                    print ("votre choix doit etre un entier entre 0 et 6")
+                    bonchoix=7
 
         puissance4_v2.affiche()
         tag1 = puissance4_v2.victoire(puissance4_v2.g, JoueurSuivant)
