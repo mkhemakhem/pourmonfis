@@ -50,4 +50,12 @@ def stocke_grille_ganante(g_gagant,joueur):
         file.write(maligne);
         file.write("\n")
 
- 
+def agrege():
+    grilles12=grilles_from_file(12)
+    grilles21=grilles_from_file(21)
+    for grille12 in grilles12:
+        stocke_grille_ganante(grille12,2)
+    for grille21 in grilles21:
+        stocke_grille_ganante(grille21,1)
+
+

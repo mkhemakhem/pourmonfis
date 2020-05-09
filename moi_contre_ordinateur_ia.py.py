@@ -75,8 +75,9 @@ def main():
 
         if tag1 == True or tag2 == True:
             iteration=0
+            flag=puissance4_v2.recommencer()
 
-            if puissance4_v2.recommencer():
+            if flag=="O" or flag=="o" or flag=="Y" or flag=="y":
                 main()
             else:
                 matchFini = True

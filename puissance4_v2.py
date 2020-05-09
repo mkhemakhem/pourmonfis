@@ -30,10 +30,11 @@ def recommencer():
     grille_vide()
     print("voulez vous recommencer (O|o)?:")
     flag = input()
-    if flag == "O" or flag == "o":
-        return True
-    else:
-        return bool(False)
+    return flag
+#    if flag == "O" or flag == "o":
+#        return True
+#    else:
+#        return bool(False)
 
 
 # cette fonction met à jour la grille_affiche à partir des valuers de la grille principale

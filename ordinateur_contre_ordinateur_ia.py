@@ -2,6 +2,7 @@ import puissance4_v2
 import grilles as gr
 import puissance4_grille_ia as ia
 import random
+import time
 
 
 def jouer(demarrage):
@@ -17,11 +18,11 @@ def jouer(demarrage):
         iteration = iteration+1
         print("Joueur encours", JoueurEncours)
         if 2 == 2:
-            colonne_gagant = int(
-                puissance4_v2.coup_aleatoire_gagant(JoueurEncours))
+            #colonne_gagant=7
+            colonne_gagant = int(puissance4_v2.coup_aleatoire_gagant(JoueurEncours))
             if colonne_gagant == 7:
-                colonne_gagant_adversaire = int(
-                    puissance4_v2.coup_aleatoire_gagant(JoueurEnAttente))
+                #colonne_gagant_adversaire=7
+                colonne_gagant_adversaire = int(puissance4_v2.coup_aleatoire_gagant(JoueurEnAttente))
                 if colonne_gagant_adversaire == 7:
                     if iteration > int(demarrage):
                        
@@ -35,6 +36,7 @@ def jouer(demarrage):
                                     break
                                 except:
                                     print("pas de colonne retournee malgres que la grille est inclue")
+                        colonne_ajouer=7 
                         if colonne_ajouer == 7:
                             grilles = gr.grilles_from_file(JoueurEnAttente)
                             for grille in grilles:
@@ -67,6 +69,9 @@ def jouer(demarrage):
         if tag1 == True:
             gr.stocke_grille_ganante(puissance4_v2.g,JoueurEncours)
         tag2 = puissance4_v2.match_nul(puissance4_v2.g)
+        if tag2:
+            print("match null")
+            time.sleep(10)
 
         if tag1 == True or tag2 == True:
             iteration=0
