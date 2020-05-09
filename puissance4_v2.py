@@ -5,6 +5,7 @@ g = [[0] * 7 for _ in range(6)]
 gvide = [[0] * 7 for _ in range(6)]
 # grille d'affichage: toutes les cases sont initialisées au caractere .
 grille_affiche = [["."] * 7 for _ in range(6)]
+grille_titre = [["."] * 7 for _ in range(2)]
 joueur1 = "X"
 joueur2 = "O"
 magrille_de_test = [[0] * 7 for _ in range(6)]
@@ -38,6 +39,14 @@ def recommencer():
 # cette fonction met à jour la grille_affiche à partir des valuers de la grille principale
 # on met X lorsque la valeur de la case dans la grille principle est 1 et O lorsque la valuere est 2
 def affiche():
+    for colonne in range(7):
+        grille_titre[0][colonne]=colonne
+    print(str(grille_titre[0]).replace(",", "").replace(
+            "[", "").replace("]", "").replace("'", ""))
+    for colonne in range(7):
+        grille_titre[1][colonne]="="
+    print(str(grille_titre[1]).replace(",", "").replace(
+            "[", "").replace("]", "").replace("'", ""))    
     for ligne in range(6):
         for colonne in range(7):
             if g[ligne][colonne] == 1:

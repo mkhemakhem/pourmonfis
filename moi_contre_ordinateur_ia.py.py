@@ -18,7 +18,7 @@ def main():
                 colonne_gagant_adversaire = int(
                     puissance4_v2.coup_aleatoire_gagant(1))
                 if colonne_gagant_adversaire == 7:
-                    if iteration > 4:
+                    if iteration > 2:
                        
                         colonne_ajouer = 7
                         grilles = gr.grilles_from_file(2)

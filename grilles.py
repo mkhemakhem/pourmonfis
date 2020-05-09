@@ -39,6 +39,10 @@ def grilles_from_file(joueur):
 
 def stocke_grille_ganante(g_gagant,joueur):
     fichier = fichier_grille_gagnant+str(joueur)+extension
+    grilles = grilles_from_file(joueur)
+    for grille in grilles:
+        if grille==g_gagant:
+            return
     file = open(fichier, "a")
     for ligne in range(6):
         maligne=str(g_gagant[ligne]).replace(",", "").replace("[", "").replace("]","").replace("'","")
