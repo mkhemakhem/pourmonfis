@@ -76,12 +76,14 @@ def jouer(demarrage):
 
         if JoueurEncours == 1:
             JoueurEncours = 2
+            JoueurEnAttente=1
         else:
             JoueurEncours = 1
+            JoueurEnAttente=2
 
 
 def main():
-    for repetition in range(1000):
+    for repetition in range(10000):
         jouer(1)
         
 main()
