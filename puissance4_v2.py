@@ -1,4 +1,5 @@
 import random
+import reference as ref
 # la grille principale
 # toutes les cases sont initialisées à 0
 g = [[0] * 7 for _ in range(6)]
@@ -296,7 +297,8 @@ def coup_aleatoire(grille, joueur):
 
 def coup_aleatoire_gagant(joueur):
     retour = int(7)
-    for colonne in range(7):
+    random.shuffle(ref.liste_colonne)
+    for colonne in ref.liste_colonne:
         clone_grille()
         if coup_possible(magrille_de_test, colonne):
             jouer(magrille_de_test, joueur, colonne)

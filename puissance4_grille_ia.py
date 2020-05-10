@@ -1,3 +1,5 @@
+import reference as ref
+import random
 def isIncluded(g_jeu,g_ia):
     for ligne in reversed(range(6)):
         for colonne in range(7):
@@ -9,7 +11,9 @@ def isIncluded(g_jeu,g_ia):
 #elle retourne le numero de colonne joueable est qui a la valeur du joueur de la grille temoin
 def getColonne(g_jeu,g_ia,joueur):
     for ligne in reversed(range(6)):
-        for colonne in range(7):
+        random.shuffle(ref.liste_colonne)
+        
+        for colonne in ref.liste_colonne:
             if g_jeu[ligne][colonne]==0 and g_ia[ligne][colonne]==joueur:
                 retour=int(colonne)
                 return colonne
